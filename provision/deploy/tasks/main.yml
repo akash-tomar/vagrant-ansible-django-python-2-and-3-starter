@@ -1,2 +1,6 @@
-- name: Setup Virtualenv
-  pip: virtualenv={{ virtualenv_path }} requirements={{ virtualenv_path }}/requirements.txt
+- name: install virtualenv
+  pip:
+    executable: pip3
+    requirements: /var/www/django-app/requirements.txt
+  become: yes
+  become_user: root
